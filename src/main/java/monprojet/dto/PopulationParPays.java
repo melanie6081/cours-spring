@@ -1,10 +1,6 @@
 package monprojet.dto;
 import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.persistence.*;
-
-import lombok.*;
+import monprojet.dao.*;
 
 public interface PopulationParPays {
     String getName();

@@ -2,6 +2,7 @@ package monprojet.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import monprojet.dto.*;
 
 import monprojet.dto.PopulationParPays;
 import org.springframework.data.jpa.repository.JpaRepository;

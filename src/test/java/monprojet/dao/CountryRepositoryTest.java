@@ -52,16 +52,13 @@ public class CountryRepositoryTest {
         assertEquals(12, countryDAO.populationPourCountryID(1),"La france doit avoir une population de 12.");
     }
 
-    @Test onSaitAfficherPopulationParPays() {
+    @Test
+    void onSaitAfficherPopulationParPays() {
         log.info("On affiche le nom des pays et leur population.");
-        ArrayList popu = new ArrayList<Integer>();
-        popu.add(12);
-        popu.add(18);
-        popu.add(27);
-        assertEquals
+        assertEquals(3,countryDAO.populationParPays().size());
         }
 
 
     }
 
-}
+
