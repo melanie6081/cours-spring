@@ -1,5 +1,6 @@
 package monprojet.dao;
 
+import monprojet.dto.PopulationParPays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
@@ -7,9 +8,10 @@ import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.List;
+import java.util.*;
 
 import monprojet.entity.*;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.jdbc.Sql;
 
@@ -19,6 +21,7 @@ public class CountryRepositoryTest {
 
     @Autowired
     private CountryRepository countryDAO;
+    private PopulationParPays countryDTO;
 
     @Test
     void lesNomsDePaysSontTousDifferents() {
@@ -41,6 +44,24 @@ public class CountryRepositoryTest {
         int combienDePaysDansLeJeuDeTest = 3 + 1; // 3 dans data.sql, 1 dans test-data.sql
         long nombre = countryDAO.count();
         assertEquals(combienDePaysDansLeJeuDeTest, nombre, "On doit trouver 4 pays" );
+    }
+
+    @Test
+    void onSaitAfficherPopulationPays(){
+        log.info("On compte la population d'un pays en fonction de son ID (ici=1 soit la France).");
+        assertEquals(12, countryDAO.populationPourCountryID(1),"La france doit avoir une population de 12.");
+    }
+
+    @Test onSaitAfficherPopulationParPays() {
+        log.info("On affiche le nom des pays et leur population.");
+        ArrayList popu = new ArrayList<Integer>();
+        popu.add(12);
+        popu.add(18);
+        popu.add(27);
+        assertEquals
+        }
+
+
     }
 
 }
